@@ -78,7 +78,8 @@ private:
 		if (send_force)
 			ignore_all_except_a_xyz |= (1 << 9);
 
-		auto accel = ftf::transform_frame_enu_ned(accel_enu);
+		//auto accel = ftf::transform_frame_enu_ned(accel_enu); lhnguyen debug
+		accel = accel_enu;
 
 		set_position_target_local_ned(stamp.toNSec() / 1000000,
 					utils::enum_value(MAV_FRAME::LOCAL_NED),
